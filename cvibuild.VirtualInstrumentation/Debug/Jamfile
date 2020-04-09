@@ -1,0 +1,65 @@
+CCFLAGS = -g ;
+HDRS = 	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activex\\word"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\activex\\excel"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\custctrl"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\custctrl\\custsupp"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\cvirtsup"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\datasock"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\daqUtil"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\printing"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\toolbox"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\reportgen"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\toolslib\\localui"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\instr"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\toolslib\\custctrl\\custsupp"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\instr"
+	"C:\\ProgramData\\National Instruments\\CVI2019\\instr"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\include"
+	"C:\\ProgramData\\National Instruments\\CVI2019\\include"
+	"C:\\ProgramData\\National Instruments\\CVI\\include"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include\\ansi"
+	"c:\\program files (x86)\\national instruments\\cvi2019\\include\\clang\\3.3"
+	"C:\\Program Files (x86)\\IVI Foundation\\IVI\\Include"
+	"C:\\Program Files (x86)\\IVI Foundation\\VISA\\winnt\\include"
+	"C:\\Program Files (x86)\\National Instruments\\Shared\\MSDTRedistributables\\SDKHeaderFiles\\8.1"
+	"c:\\Program Files (x86)\\National Instruments\\CVI2019\\bin"
+	"c:\\Program Files (x86)\\National Instruments\\Shared\\CVI\\bin"
+	;
+include Jamfile_instr ;
+LOCATE on "Generator.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "Generator.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "GlobalVariables.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "GRA0084.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "GRA0084.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "Osciloskop.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "Osciloskop.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "Voltmetr.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "Voltmetr.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+Object "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\Generator.c" ;
+FILENUM on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj" = 1 ;
+DEFPROTS on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj.cvidefprots" ;
+OUTFILE on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj.out" ;
+PrjObjects += "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj" ;
+Object "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\GRA0084.c" ;
+FILENUM on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj" = 2 ;
+DEFPROTS on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj.cvidefprots" ;
+OUTFILE on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj.out" ;
+PrjObjects += "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\GRA0084.obj" ;
+Object "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\Osciloskop.c" ;
+FILENUM on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj" = 3 ;
+DEFPROTS on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj.cvidefprots" ;
+OUTFILE on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj.out" ;
+PrjObjects += "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Osciloskop.obj" ;
+Object "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\Voltmetr.c" ;
+FILENUM on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj" = 4 ;
+DEFPROTS on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj.cvidefprots" ;
+OUTFILE on "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj.out" ;
+PrjObjects += "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Voltmetr.obj" ;
+Object "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\resources.res" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\resources.in.rc" ;
+Depends "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\resources.res" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\manifest.xml" ;
+MainFromObjects "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\VirtualInstrumentation.exe" : $(PrjObjects) $(InstrObjects) ;
+Depends "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\VirtualInstrumentation.exe" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\link_options.txt" ;
+Depends "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\VirtualInstrumentation.exe" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\resources.res" ;
+Depends all : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\VirtualInstrumentation.exe" ;

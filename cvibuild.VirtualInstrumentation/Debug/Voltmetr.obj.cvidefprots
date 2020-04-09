@@ -1,0 +1,5 @@
+[RINGSLIDE_OnClick]
+Class="Function"
+Prototype="int RINGSLIDE_OnClick(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:39:1"
+

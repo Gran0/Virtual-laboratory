@@ -1,0 +1,30 @@
+[main]
+Class="Function"
+Prototype="int main(int argc, char *argv[]);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:51:1"
+
+[ITEM_Osciloskop_OnClick]
+Class="Function"
+Prototype="void ITEM_Osciloskop_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:73:1"
+
+[ITEM_Voltmetr_OnClick]
+Class="Function"
+Prototype="void ITEM_Voltmetr_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:80:1"
+
+[ITEM_Generator_OnClick]
+Class="Function"
+Prototype="void ITEM_Generator_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:85:1"
+
+[ITEM_Autor_OnClick]
+Class="Function"
+Prototype="void ITEM_Autor_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:90:1"
+
+[panelRozcestnik]
+Class="Function"
+Prototype="int panelRozcestnik(int panel, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:95:1"
+
