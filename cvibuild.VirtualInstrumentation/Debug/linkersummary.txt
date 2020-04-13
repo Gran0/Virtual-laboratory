@@ -3,6 +3,7 @@ GRA0084.obj
 Osciloskop.obj
 Voltmetr.obj
 cvi.lib
+advanlys.lib
 cvistart.lib
 kernel32.lib
 user32.lib

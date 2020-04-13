@@ -1,10 +1,40 @@
-[Gauge_Event]
-Class="Function"
-Prototype="int Gauge_Event(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:21:1"
-
 [panelGenerator_Close]
 Class="Function"
 Prototype="int panelGenerator_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:33:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:26:1"
+
+[TimerGen_Tick]
+Class="Function"
+Prototype="int TimerGen_Tick(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:44:1"
+
+[Signal_type_Change]
+Class="Function"
+Prototype="int Signal_type_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:99:1"
+
+[Amplitude_Change]
+Class="Function"
+Prototype="int Amplitude_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:113:1"
+
+[Offset_Change]
+Class="Function"
+Prototype="int Offset_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:125:1"
+
+[Freq_Change]
+Class="Function"
+Prototype="int Freq_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:137:1"
+
+[Noise_Change]
+Class="Function"
+Prototype="int Noise_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:149:1"
+
+[Generator_run_Click]
+Class="Function"
+Prototype="int Generator_run_Click(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:161:1"
 

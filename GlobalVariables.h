@@ -15,13 +15,16 @@
     extern "C" {
 #endif
 
+#define SAMPLING_RATE 100000.0	// Sampling frequence of program
 		
 int *panelHandleRozcestnik;
 int *panelHandleOscil;
 int *panelHandleVoltmetr;
 int *panelHandleGenerator;
 		
-
+double generatorSignalValue;
+#define BUFFER_SIZE 30000
+double generatorSignalArray[BUFFER_SIZE];
 
 
 
