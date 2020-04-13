@@ -13,7 +13,7 @@
 
      /* Panels and Controls: */
 
-#define  PANEL                            1       /* callback function: panelRozcestnik */
+#define  PANEL                            1       /* callback function: panelRozcestnik_Close */
 #define  PANEL_AppTitle                   2       /* control type: textMsg, callback function: (none) */
 #define  PANEL_TextPoweredBy              3       /* control type: textMsg, callback function: (none) */
 
@@ -27,20 +27,17 @@
 
 #define  MENUBAR                          1
 #define  MENUBAR_MENU1                    2
-#define  MENUBAR_MENU1_ITEM2              3       /* callback function: ITEM_Osciloskop_OnClick */
-#define  MENUBAR_MENU1_ITEM3              4       /* callback function: ITEM_Voltmetr_OnClick */
-#define  MENUBAR_MENU1_ITEM4              5       /* callback function: ITEM_Generator_OnClick */
-#define  MENUBAR_MENU3                    6
-#define  MENUBAR_MENU3_ITEM6              7       /* callback function: ITEM_Autor_OnClick */
+#define  MENUBAR_MENU1_ITEM2              3       /* callback function: ShowFrameOsciloskop */
+#define  MENUBAR_MENU1_ITEM3              4       /* callback function: ShowFrameVoltmeter */
+#define  MENUBAR_MENU1_ITEM4              5       /* callback function: ShowFrameGenerator */
 
 
      /* Callback Prototypes: */
 
-void CVICALLBACK ITEM_Autor_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-void CVICALLBACK ITEM_Generator_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-void CVICALLBACK ITEM_Osciloskop_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-void CVICALLBACK ITEM_Voltmetr_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-int  CVICALLBACK panelRozcestnik(int panel, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK panelRozcestnik_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);
+void CVICALLBACK ShowFrameGenerator(int menubar, int menuItem, void *callbackData, int panel);
+void CVICALLBACK ShowFrameOsciloskop(int menubar, int menuItem, void *callbackData, int panel);
+void CVICALLBACK ShowFrameVoltmeter(int menubar, int menuItem, void *callbackData, int panel);
 
 
 #ifdef __cplusplus

@@ -13,9 +13,15 @@
 
      /* Panels and Controls: */
 
-#define  PANEL_OSC                        1
-#define  PANEL_OSC_LED                    2       /* control type: LED, callback function: (none) */
-#define  PANEL_OSC_TEST_SWITCH            3       /* control type: binary, callback function: TEST_SWITCH_Toogle */
+#define  PANEL_OSC                        1       /* callback function: panelOSC_Close */
+#define  PANEL_OSC_GRAPH_OSCIL            2       /* control type: graph, callback function: (none) */
+#define  PANEL_OSC_GRAPH_FFT              3       /* control type: graph, callback function: (none) */
+#define  PANEL_OSC_RINGSLIDE_MODE         4       /* control type: slide, callback function: (none) */
+#define  PANEL_OSC_RINGSLIDE_COUPLING     5       /* control type: slide, callback function: (none) */
+#define  PANEL_OSC_RINGKNOB_SENSITIVITY   6       /* control type: slide, callback function: (none) */
+#define  PANEL_OSC_RINGKNOB_TIMEBASE      7       /* control type: slide, callback function: (none) */
+#define  PANEL_OSC_BUTTON_OSCIL_RUN       8       /* control type: textButton, callback function: (none) */
+#define  PANEL_OSC_DECORATION             9       /* control type: deco, callback function: (none) */
 
 
      /* Control Arrays: */
@@ -27,17 +33,17 @@
 
 #define  MENUBAR                          1
 #define  MENUBAR_M_OSC1                   2
-#define  MENUBAR_M_OSC1_I_OSC             3       /* callback function: MENU_OSC_Rozcestnik_OnClick */
-#define  MENUBAR_M_OSC1_I_OSC2            4       /* callback function: MENU_OSC_Voltmetr_OnClick */
-#define  MENUBAR_M_OSC1_I_OSC3            5       /* callback function: MENU_OSC_Generator_OnClick */
+#define  MENUBAR_M_OSC1_I_OSC             3       /* callback function: ShowFrameRozcestnik */
+#define  MENUBAR_M_OSC1_I_OSC2            4       /* callback function: ShowFrameVoltmeter */
+#define  MENUBAR_M_OSC1_I_OSC3            5       /* callback function: ShowFrameGenerator */
 
 
      /* Callback Prototypes: */
 
-void CVICALLBACK MENU_OSC_Generator_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-void CVICALLBACK MENU_OSC_Rozcestnik_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-void CVICALLBACK MENU_OSC_Voltmetr_OnClick(int menubar, int menuItem, void *callbackData, int panel);
-int  CVICALLBACK TEST_SWITCH_Toogle(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK panelOSC_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);
+void CVICALLBACK ShowFrameGenerator(int menubar, int menuItem, void *callbackData, int panel);
+void CVICALLBACK ShowFrameRozcestnik(int menubar, int menuItem, void *callbackData, int panel);
+void CVICALLBACK ShowFrameVoltmeter(int menubar, int menuItem, void *callbackData, int panel);
 
 
 #ifdef __cplusplus

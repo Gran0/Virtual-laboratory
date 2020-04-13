@@ -57,7 +57,10 @@ int main (int argc, char *argv[])
 		return -1;
 	if((*panelHandleOscil = LoadPanel (0, "Osciloskop.uir", PANEL))<0)
 		return -2;
-	
+	if((*panelHandleVoltmetr = LoadPanel (0, "Voltmetr.uir", PANEL))<0)
+		return -2;
+	if((*panelHandleGenerator = LoadPanel (0, "Generator.uir", PANEL))<0)
+		return -2;
 	/* display the panel and run the user interface */
 	DisplayPanel (*panelHandleRozcestnik);
 	RunUserInterface ();
@@ -65,34 +68,7 @@ int main (int argc, char *argv[])
 	return 0;
 }
 
-//==============================================================================
-// UI callback function prototypes
-
-/// HIFN Exit when the user dismisses the panel.
-
-void CVICALLBACK ITEM_Osciloskop_OnClick (int menuBar, int menuItem, void *callbackData,
-		int panel)
-{
-	DisplayPanel(*panelHandleOscil);
-	HidePanel(*panelHandleRozcestnik);
-}
-
-void CVICALLBACK ITEM_Voltmetr_OnClick (int menuBar, int menuItem, void *callbackData,
-										int panel)
-{
-}
-
-void CVICALLBACK ITEM_Generator_OnClick (int menuBar, int menuItem, void *callbackData,
-		int panel)
-{
-}
-
-void CVICALLBACK ITEM_Autor_OnClick (int menuBar, int menuItem, void *callbackData,
-									 int panel)
-{
-}
-
-int CVICALLBACK panelRozcestnik (int panel, int event, void *callbackData,
+int CVICALLBACK panelRozcestnik_Close (int panel, int event, void *callbackData,
 						 int eventData1, int eventData2)
 {
 	switch (event)
@@ -109,3 +85,41 @@ int CVICALLBACK panelRozcestnik (int panel, int event, void *callbackData,
 	}
 	return 0;
 }
+
+///////////  Shared functions for windows switching. Don't change names!!!
+void CVICALLBACK ShowFrameOsciloskop (int menuBar, int menuItem, void *callbackData,
+									  int panel)
+{
+	DisplayPanel(*panelHandleOscil);
+	HidePanel(*panelHandleGenerator);
+	HidePanel(*panelHandleVoltmetr);
+	HidePanel(*panelHandleRozcestnik);
+}
+
+void CVICALLBACK ShowFrameVoltmeter (int menuBar, int menuItem, void *callbackData,
+									 int panel)
+{
+	DisplayPanel(*panelHandleVoltmetr);
+	HidePanel(*panelHandleGenerator);
+	HidePanel(*panelHandleOscil);
+	HidePanel(*panelHandleRozcestnik);
+}
+
+void CVICALLBACK ShowFrameGenerator (int menuBar, int menuItem, void *callbackData,
+									 int panel)
+{
+	DisplayPanel(*panelHandleGenerator);
+	HidePanel(*panelHandleVoltmetr);
+	HidePanel(*panelHandleOscil);
+	HidePanel(*panelHandleRozcestnik);
+}
+
+void CVICALLBACK ShowFrameRozcestnik (int menuBar, int menuItem, void *callbackData,
+									  int panel)
+{
+	DisplayPanel(*panelHandleRozcestnik);
+	HidePanel(*panelHandleVoltmetr);
+	HidePanel(*panelHandleOscil);
+	HidePanel(*panelHandleGenerator);
+}
+///////////////////////////////// End shared functions

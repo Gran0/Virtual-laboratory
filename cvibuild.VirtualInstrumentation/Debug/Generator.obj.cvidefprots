@@ -1,5 +1,10 @@
 [Gauge_Event]
 Class="Function"
 Prototype="int Gauge_Event(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:37:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:21:1"
+
+[panelGenerator_Close]
+Class="Function"
+Prototype="int panelGenerator_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:33:1"
 

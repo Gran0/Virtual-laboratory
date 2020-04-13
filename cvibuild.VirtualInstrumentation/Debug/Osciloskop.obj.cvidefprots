@@ -1,20 +1,5 @@
-[MENU_OSC_Rozcestnik_OnClick]
+[panelOSC_Close]
 Class="Function"
-Prototype="void MENU_OSC_Rozcestnik_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
+Prototype="int panelOSC_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);"
 SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:20:1"
-
-[MENU_OSC_Voltmetr_OnClick]
-Class="Function"
-Prototype="void MENU_OSC_Voltmetr_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:27:1"
-
-[MENU_OSC_Generator_OnClick]
-Class="Function"
-Prototype="void MENU_OSC_Generator_OnClick(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:32:1"
-
-[TEST_SWITCH_Toogle]
-Class="Function"
-Prototype="int TEST_SWITCH_Toogle(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:39:1"
 
