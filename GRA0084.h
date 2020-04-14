@@ -15,7 +15,8 @@
 
 #define  PANEL                            1       /* callback function: panelRozcestnik_Close */
 #define  PANEL_AppTitle                   2       /* control type: textMsg, callback function: (none) */
-#define  PANEL_TextPoweredBy              3       /* control type: textMsg, callback function: (none) */
+#define  PANEL_TEXTMSG                    3       /* control type: textMsg, callback function: (none) */
+#define  PANEL_TextPoweredBy              4       /* control type: textMsg, callback function: (none) */
 
 
      /* Control Arrays: */
