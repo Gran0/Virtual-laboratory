@@ -68,7 +68,8 @@ int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 			{
 				generatorSignalArray[i] += noiseSamples[i]+offset;
 			}
-			generatorSignalValue = generatorSignalArray[0];
+			
+			someStuff = 5.5;
 			
 			RefreshGraph (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM);
 			DeleteGraphPlot(*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM,-1, VAL_IMMEDIATE_DRAW);
@@ -165,9 +166,7 @@ int CVICALLBACK Generator_run_Click (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:	// Start-Stop signal generator 
 			int choice;
-			GetCtrlVal (*panelHandleGenerator, PANEL_GEN_BUTTON_ENABLE_GEN, &choice);
-			
-			
+			GetCtrlVal (*panelHandleGenerator, PANEL_GEN_BUTTON_ENABLE_GEN, &choice);		
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_AMPLITUDE,&amplitude);
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_OFFSET,&offset);
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_FREQUENCY,&frequence);
@@ -177,3 +176,4 @@ int CVICALLBACK Generator_run_Click (int panel, int control, int event,
 	}
 	return 0;
 }
+

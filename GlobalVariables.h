@@ -21,11 +21,10 @@ int *panelHandleRozcestnik;
 int *panelHandleOscil;
 int *panelHandleVoltmetr;
 int *panelHandleGenerator;
-		
-double generatorSignalValue;
+
 #define BUFFER_SIZE 30000
 double generatorSignalArray[BUFFER_SIZE];
-
+double someStuff;
 
 
 

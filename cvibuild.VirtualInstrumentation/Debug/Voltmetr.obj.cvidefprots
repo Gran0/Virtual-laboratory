@@ -1,10 +1,40 @@
 [RINGSLIDE_OnClick]
 Class="Function"
 Prototype="int RINGSLIDE_OnClick(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:22:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:23:1"
 
 [panelVoltmeter_Close]
 Class="Function"
 Prototype="int panelVoltmeter_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:34:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:35:1"
+
+[Voltmeter_Range_Change]
+Class="Function"
+Prototype="int Voltmeter_Range_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:53:1"
+
+[Voltmeter_Smoothing_Change]
+Class="Function"
+Prototype="int Voltmeter_Smoothing_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:72:1"
+
+[Voltmeter_Signal_Change]
+Class="Function"
+Prototype="int Voltmeter_Signal_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:86:1"
+
+[Voltmeter_Coupling_Change]
+Class="Function"
+Prototype="int Voltmeter_Coupling_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:105:1"
+
+[V_TIMER_TICK]
+Class="Function"
+Prototype="int V_TIMER_TICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:117:1"
+
+[TIME_ANIMATION_TICK]
+Class="Function"
+Prototype="int TIME_ANIMATION_TICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Voltmetr.c:144:1"
 
