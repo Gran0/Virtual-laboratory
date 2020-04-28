@@ -31,10 +31,10 @@ SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich pro
 [Noise_Change]
 Class="Function"
 Prototype="int Noise_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:150:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:151:1"
 
 [Generator_run_Click]
 Class="Function"
 Prototype="int Generator_run_Click(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:162:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:163:1"
 

@@ -142,6 +142,7 @@ int CVICALLBACK Freq_Change (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_FREQUENCY,&frequence);
+			
 			break;
 	}
 	return 0;

@@ -17,7 +17,7 @@
 #define  PANEL_VOLT_RINGDIAL_VOLT_RANGE   2       /* control type: slide, callback function: Voltmeter_Range_Change */
 #define  PANEL_VOLT_RINGDIAL_SMOOTHING    3       /* control type: slide, callback function: Voltmeter_Smoothing_Change */
 #define  PANEL_VOLT_SW_VOLTMETER_COUPLING 4       /* control type: binary, callback function: Voltmeter_Coupling_Change */
-#define  PANEL_VOLT_SW_VOLTMETER_ENABLE   5       /* control type: binary, callback function: Voltmeter_Signal_Change */
+#define  PANEL_VOLT_SW_VOLTMETER_ENABLE   5       /* control type: binary, callback function: (none) */
 #define  PANEL_VOLT_GAUGE                 6       /* control type: scale, callback function: (none) */
 #define  PANEL_VOLT_NUMERIC_DIG_VOLTAGE   7       /* control type: numeric, callback function: (none) */
 #define  PANEL_VOLT_TIMER_ANIMATION       8       /* control type: timer, callback function: TIME_ANIMATION_TICK */
@@ -48,7 +48,6 @@ int  CVICALLBACK TIME_ANIMATION_TICK(int panel, int control, int event, void *ca
 int  CVICALLBACK V_TIMER_TICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK Voltmeter_Coupling_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK Voltmeter_Range_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
-int  CVICALLBACK Voltmeter_Signal_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK Voltmeter_Smoothing_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 
 

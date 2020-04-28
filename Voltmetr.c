@@ -1,5 +1,8 @@
+#include <advanlys.h>
+#include <ansi_c.h>
 #include "Generator.h"
 #include <userint.h>
+#include <stdbool.h>
 
 //==============================================================================
 //
@@ -83,25 +86,6 @@ int CVICALLBACK Voltmeter_Smoothing_Change (int panel, int control, int event,
 	return 0;
 }
 
-int CVICALLBACK Voltmeter_Signal_Change (int panel, int control, int event,
-		void *callbackData, int eventData1, int eventData2)
-{
-	int signal;
-	switch (event)
-	{
-		case EVENT_COMMIT:
-			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_SW_VOLTMETER_ENABLE, &signal);
-			/*if(signal == 1){
-				SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_VOLTMETER_TIMER, ATTR_ENABLED, 1);
-			}
-			else{
-				SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_VOLTMETER_TIMER, ATTR_ENABLED, 0);
-			}*/
-			break;
-	}
-	return 0;
-}
-
 int CVICALLBACK Voltmeter_Coupling_Change (int panel, int control, int event,
 		void *callbackData, int eventData1, int eventData2)
 {
@@ -113,23 +97,65 @@ int CVICALLBACK Voltmeter_Coupling_Change (int panel, int control, int event,
 	}
 	return 0;
 }
-
+float SSvalue(double *array,int size){
+	double suma = 0.0f;
+	for(uint16_t i=0; i<size-1; i++){
+		suma += array[i];
+	}
+	suma /= size;
+	return (float) suma;
+}
+float RMScalc(double *array,int size){
+	double suma = 0.0f;
+	uint16_t counter = 0;
+	bool underZero=false;
+	bool aboveZero=false;
+	
+	for(uint16_t x=0; x<size-1; x++){
+		// Detektor jedné periody
+		if(underZero == false && array[x] < 0.0){	// Èekání na prùchod nulou
+			underZero = true;
+		}
+		if(underZero == true && array[x] > 0.0){ 	// zaèátek pùlperiody
+			aboveZero = true;
+		}
+		if(aboveZero == true && array[x] < 0.0)		// konec pùlperiody
+			break;
+		
+		if(aboveZero == true){		// Integrování druhé mocniny
+			suma += array[x]*array[x];
+			counter++;
+		}	
+	}
+	double result =  suma / counter;
+	result = sqrt(result);
+	
+	return (float) result;
+}
 int CVICALLBACK V_TIMER_TICK (int panel, int control, int event,
 							  void *callbackData, int eventData1, int eventData2)
 {
+	double values[BUFFER_SIZE];
+	
 	switch (event)
 	{
 		case EVENT_TIMER_TICK:
 			int coupling,enable;
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_SW_VOLTMETER_COUPLING, &coupling);
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_SW_VOLTMETER_ENABLE, &enable);
+			
 			if(enable == 1){
-				float sum = 0.0f;
-				for(int i=0; i<BUFFER_SIZE; i++){
-					sum += generatorSignalArray[i];
-				}
-				sum /= BUFFER_SIZE;
-				gaugeValue = sum;
+				if(coupling == 1)
+					gaugeValue = SSvalue(generatorSignalArray,BUFFER_SIZE);
+				else{
+					float DC = SSvalue(generatorSignalArray,BUFFER_SIZE);
+
+					for (int i=0; i<BUFFER_SIZE-1; i++)
+					{
+						values[i] = generatorSignalArray[i] - DC;
+					}
+					gaugeValue = RMScalc(values,5000);
+				}	
 			}
 			else{
 				gaugeValue = 0.0f;				
