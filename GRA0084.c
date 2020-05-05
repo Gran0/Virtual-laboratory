@@ -28,12 +28,13 @@
 // Types
 
 //==============================================================================
-// Static global variables
+// Definice panel handlerù
 int pHRozcestnik = 0;
 int pHOscil = 1;
 int pHVolt = 2;
 int pHGen = 3;
 
+// Pøiøazení adres do globálních ukazatelù
 *panelHandleRozcestnik = &pHRozcestnik;
 *panelHandleOscil = &pHOscil;
 *panelHandleVoltmetr = &pHVolt;
@@ -109,7 +110,7 @@ void CVICALLBACK ShowFrameGenerator (int menuBar, int menuItem, void *callbackDa
 									 int panel)
 {
 	DisplayPanel(*panelHandleGenerator);
-	//HidePanel(*panelHandleVoltmetr);		// Vrátit zpìt !!!
+	HidePanel(*panelHandleVoltmetr);	
 	HidePanel(*panelHandleOscil);
 	HidePanel(*panelHandleRozcestnik);
 }

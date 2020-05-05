@@ -22,7 +22,7 @@ int *panelHandleOscil;
 int *panelHandleVoltmetr;
 int *panelHandleGenerator;
 
-#define BUFFER_SIZE 30000
+#define BUFFER_SIZE 40000
 double generatorSignalArray[BUFFER_SIZE];
 double someStuff;
 

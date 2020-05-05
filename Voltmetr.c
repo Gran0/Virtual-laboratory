@@ -60,6 +60,7 @@ int CVICALLBACK Voltmeter_Range_Change (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			double range;
+			// Pøepínání rozsahu pøístroje
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_RINGDIAL_VOLT_RANGE, &range);
 			SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_GAUGE, ATTR_MAX_VALUE, range);
 			SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_GAUGE, ATTR_MIN_VALUE, -range);
@@ -97,6 +98,7 @@ int CVICALLBACK Voltmeter_Coupling_Change (int panel, int control, int event,
 	}
 	return 0;
 }
+// Výpoèet støední hodnoty
 float SSvalue(double *array,int size){
 	double suma = 0.0f;
 	for(uint16_t i=0; i<size-1; i++){
@@ -105,6 +107,7 @@ float SSvalue(double *array,int size){
 	suma /= size;
 	return (float) suma;
 }
+// Výpoèet efektivní hodnoty
 float RMScalc(double *array,int size){
 	double suma = 0.0f;
 	uint16_t counter = 0;
@@ -128,7 +131,11 @@ float RMScalc(double *array,int size){
 		}	
 	}
 	double result =  suma / counter;
-	result = sqrt(result);
+	// Ochrana proti odmoninì ze záporného èísla
+	if(result < 0)
+		result = -sqrt(-result);
+	else
+		result = sqrt(result);
 	
 	return (float) result;
 }
@@ -144,6 +151,7 @@ int CVICALLBACK V_TIMER_TICK (int panel, int control, int event,
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_SW_VOLTMETER_COUPLING, &coupling);
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_SW_VOLTMETER_ENABLE, &enable);
 			
+			// Výpoèet hodnoty ukazatele v závislosti na nastavení pøístroje
 			if(enable == 1){
 				if(coupling == 1)
 					gaugeValue = SSvalue(generatorSignalArray,BUFFER_SIZE);
@@ -174,7 +182,15 @@ int CVICALLBACK TIME_ANIMATION_TICK (int panel, int control, int event,
 	{
 	    // Animování pohybu ruèièky voltmetru - simuluje setrvaènost ukazatele reálného analogového pøístroje
 		case EVENT_TIMER_TICK:
-			animatedGaugeValue = animatedGaugeValue + (-animatedGaugeValue+gaugeValue)*0.2f;			
+			double range;
+			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_RINGDIAL_VOLT_RANGE, &range);
+			
+			// pøepínání setrvaènosti ruèièky voltmetru podle rozsahu
+			if(range >= 2.0)
+				animatedGaugeValue = animatedGaugeValue + (-animatedGaugeValue+gaugeValue)*0.2f; // konstanta urèuje dynamiku ruèièky	
+			else
+				animatedGaugeValue = animatedGaugeValue + (-animatedGaugeValue+gaugeValue)*0.1f;
+			
 			SetCtrlVal (*panelHandleVoltmetr,PANEL_VOLT_GAUGE, animatedGaugeValue);
 			break;
 	}

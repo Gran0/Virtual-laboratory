@@ -1,30 +1,30 @@
 [main]
 Class="Function"
 Prototype="int main(int argc, char *argv[]);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:51:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:52:1"
 
 [panelRozcestnik_Close]
 Class="Function"
 Prototype="int panelRozcestnik_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:71:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:72:1"
 
 [ShowFrameOsciloskop]
 Class="Function"
 Prototype="void ShowFrameOsciloskop(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:90:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:91:1"
 
 [ShowFrameVoltmeter]
 Class="Function"
 Prototype="void ShowFrameVoltmeter(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:99:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:100:1"
 
 [ShowFrameGenerator]
 Class="Function"
 Prototype="void ShowFrameGenerator(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:108:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:109:1"
 
 [ShowFrameRozcestnik]
 Class="Function"
 Prototype="void ShowFrameRozcestnik(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:117:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:118:1"
 

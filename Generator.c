@@ -49,6 +49,7 @@ int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_TIMER_TICK:
+			// Generování poleho hodnot signálu podle nastavení
 			switch (waveformType)
 			{
 				case SINUS:
@@ -63,14 +64,14 @@ int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 				default:
 					break;
 			}
+			// Pøidání šumu do signálu
 			WhiteNoise (BUFFER_SIZE, noise,0, noiseSamples);
 			for (int i=0; i <BUFFER_SIZE; i++)
 			{
 				generatorSignalArray[i] += noiseSamples[i]+offset;
 			}
 			
-			someStuff = 5.5;
-			
+			// Vykreslování grafu v generátoru signálu
 			RefreshGraph (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM);
 			DeleteGraphPlot(*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM,-1, VAL_IMMEDIATE_DRAW);
 			int plotHandle = PlotY (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM, generatorSignalArray, BUFFER_SIZE, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID,
@@ -80,23 +81,6 @@ int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 	return 0;
 }
 
-/*
-			SinePattern (SAMPLES, 5, 45, 6.0, dataArray);
-			
-			for (int i=0; i<SAMPLES; i++)
-			{
-				dataArray[i] += noiseArray[i];
-			}
-			RefreshGraph (panelHandle, PANEL_GRAPH);
-			DeleteGraphPlot (panelHandle, PANEL_GRAPH, -1, VAL_IMMEDIATE_DRAW);
-			plotHandle = PlotY (panelHandle, PANEL_GRAPH, dataArray, SAMPLES, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID, 1, VAL_YELLOW);
-			
-			SetPlotAttribute (panelHandle, PANEL_GRAPH, plotHandle, ATTR_TRACE_COLOR, color);
-			
-			t = timer_val/1000.0;
-			SetCtrlAttribute (panelHandle, PANEL_TIMER, ATTR_INTERVAL, t);
-			break;
-*/
 int CVICALLBACK Signal_type_Change (int panel, int control, int event,
 									void *callbackData, int eventData1, int eventData2)
 {
