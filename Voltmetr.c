@@ -153,9 +153,9 @@ int CVICALLBACK V_TIMER_TICK (int panel, int control, int event,
 			
 			// Výpoèet hodnoty ukazatele v závislosti na nastavení pøístroje
 			if(enable == 1){
-				if(coupling == 1)
+				if(coupling == 1)	// DC
 					gaugeValue = SSvalue(generatorSignalArray,BUFFER_SIZE);
-				else{
+				else{		// AC
 					float DC = SSvalue(generatorSignalArray,BUFFER_SIZE);
 
 					for (int i=0; i<BUFFER_SIZE-1; i++)

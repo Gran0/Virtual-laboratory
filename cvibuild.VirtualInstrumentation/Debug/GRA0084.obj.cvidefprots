@@ -6,25 +6,25 @@ SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich pro
 [panelRozcestnik_Close]
 Class="Function"
 Prototype="int panelRozcestnik_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:72:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:79:1"
 
 [ShowFrameOsciloskop]
 Class="Function"
 Prototype="void ShowFrameOsciloskop(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:91:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:98:1"
 
 [ShowFrameVoltmeter]
 Class="Function"
 Prototype="void ShowFrameVoltmeter(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:100:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:107:1"
 
 [ShowFrameGenerator]
 Class="Function"
 Prototype="void ShowFrameGenerator(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:109:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:116:1"
 
 [ShowFrameRozcestnik]
 Class="Function"
 Prototype="void ShowFrameRozcestnik(int menuBar, int menuItem, void *callbackData, int panel);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:118:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\GRA0084.c:125:1"
 

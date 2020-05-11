@@ -35,6 +35,7 @@ LOCATE on "GRA0084.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy
 LOCATE on "GRA0084.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
 LOCATE on "Osciloskop.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
 LOCATE on "Osciloskop.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
+LOCATE on "Osciloskop_thread.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
 LOCATE on "Voltmetr.c" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
 LOCATE on "Voltmetr.h" = "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory" ;
 Object "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\cvibuild.VirtualInstrumentation\\Debug\\Generator.obj" : "c:\\Dokumenty\\School rubish\\8.semestr\\Mìøicí systémy a jejich programování\\Semestrální projekt\\Virtual-laboratory\\Generator.c" ;

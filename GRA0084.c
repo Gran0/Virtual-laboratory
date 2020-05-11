@@ -62,9 +62,16 @@ int main (int argc, char *argv[])
 		return -2;
 	if((*panelHandleGenerator = LoadPanel (0, "Generator.uir", PANEL))<0)
 		return -2;
+	
+	int funID;
+	CmtScheduleThreadPoolFunction (DEFAULT_THREAD_POOL_HANDLE, BackgroundThread, NULL, &funID);
 	/* display the panel and run the user interface */
 	DisplayPanel (*panelHandleRozcestnik);
 	RunUserInterface ();
+	
+	// Kill thread
+	backgroundThreadRunning = false;
+	CmtWaitForThreadPoolFunctionCompletion (DEFAULT_THREAD_POOL_HANDLE, funID, 0);	// Poèkej až chcípne
 	DiscardPanel (*panelHandleRozcestnik);
 	return 0;
 }
@@ -111,7 +118,7 @@ void CVICALLBACK ShowFrameGenerator (int menuBar, int menuItem, void *callbackDa
 {
 	DisplayPanel(*panelHandleGenerator);
 	HidePanel(*panelHandleVoltmetr);	
-	HidePanel(*panelHandleOscil);
+	//HidePanel(*panelHandleOscil);
 	HidePanel(*panelHandleRozcestnik);
 }
 

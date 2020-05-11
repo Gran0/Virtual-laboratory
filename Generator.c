@@ -23,6 +23,10 @@ unsigned int frequence = 1;
 double phase = 0;
 enum{SINUS,TRIANG,SQUARE} waveformType;
 
+const unsigned int bufferDeep = 3*SAMPLING_RATE/10;	// Hloubka bufferu 300 ms;
+double generatorGraphBuffer[bufferDeep];
+unsigned int bufferLastIndex = 0;
+
 int CVICALLBACK panelGenerator_Close (int panel, int event, void *callbackData,
 									  int eventData1, int eventData2)
 {
@@ -44,12 +48,13 @@ int CVICALLBACK panelGenerator_Close (int panel, int event, void *callbackData,
 int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 									 void *callbackData, int eventData1, int eventData2)
 {	
-
 	double noiseSamples[BUFFER_SIZE];
 	switch (event)
 	{
 		case EVENT_TIMER_TICK:
 			// Generování poleho hodnot signálu podle nastavení
+			while(readMutexFlag);	// Èekání až ostatní moduly dokonèí ètení.
+	
 			switch (waveformType)
 			{
 				case SINUS:
@@ -64,17 +69,28 @@ int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 				default:
 					break;
 			}
+			
 			// Pøidání šumu do signálu
 			WhiteNoise (BUFFER_SIZE, noise,0, noiseSamples);
 			for (int i=0; i <BUFFER_SIZE; i++)
 			{
 				generatorSignalArray[i] += noiseSamples[i]+offset;
 			}
+			newDataFlag = true;
+			// Kopírování nových namìøených hodnot do kruhového bufferu grafu generátoru
+			for (unsigned int index = 0; index<BUFFER_SIZE; index++)
+			{
+				generatorGraphBuffer[bufferLastIndex] = generatorSignalArray[index];
+				if(bufferLastIndex < bufferDeep-1)
+					bufferLastIndex++;
+				else
+					bufferLastIndex = 0;
+			}
 			
 			// Vykreslování grafu v generátoru signálu
 			RefreshGraph (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM);
 			DeleteGraphPlot(*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM,-1, VAL_IMMEDIATE_DRAW);
-			int plotHandle = PlotY (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM, generatorSignalArray, BUFFER_SIZE, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID,
+			int plotHandle = PlotY (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM, generatorGraphBuffer, bufferDeep, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID,
 									SAMPLING_RATE, VAL_YELLOW);
 			break;
 	}

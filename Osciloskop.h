@@ -16,8 +16,8 @@
 #define  PANEL_OSC                        1       /* callback function: panelOSC_Close */
 #define  PANEL_OSC_GRAPH_OSCIL            2       /* control type: graph, callback function: (none) */
 #define  PANEL_OSC_GRAPH_FFT              3       /* control type: graph, callback function: (none) */
-#define  PANEL_OSC_RINGSLIDE_MODE         4       /* control type: slide, callback function: (none) */
-#define  PANEL_OSC_RINGSLIDE_COUPLING     5       /* control type: slide, callback function: (none) */
+#define  PANEL_OSC_RINGSLIDE_MODE         4       /* control type: slide, callback function: OSC_MODE_CHANGE */
+#define  PANEL_OSC_RINGSLIDE_COUPLING     5       /* control type: slide, callback function: OSC_COUPLING_CHANGE */
 #define  PANEL_OSC_RINGKNOB_SENSITIVITY   6       /* control type: slide, callback function: OSC_SENSITIVITY_CHANGE */
 #define  PANEL_OSC_RINGKNOB_TIMEBASE      7       /* control type: slide, callback function: OSC_TIMEBASE_CHANGE */
 #define  PANEL_OSC_BUTTON_OSCIL_RUN       8       /* control type: textButton, callback function: BTN_RUN_CLICK */
@@ -42,6 +42,8 @@
      /* Callback Prototypes: */
 
 int  CVICALLBACK BTN_RUN_CLICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK OSC_COUPLING_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK OSC_MODE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_SENSITIVITY_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_TIMEBASE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK panelOSC_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);
