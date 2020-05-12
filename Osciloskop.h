@@ -15,14 +15,19 @@
 
 #define  PANEL_OSC                        1       /* callback function: panelOSC_Close */
 #define  PANEL_OSC_GRAPH_OSCIL            2       /* control type: graph, callback function: (none) */
-#define  PANEL_OSC_GRAPH_FFT              3       /* control type: graph, callback function: (none) */
+#define  PANEL_OSC_GRAPH_FFT              3       /* control type: graph, callback function: GRAPH_FFT_EVEN */
 #define  PANEL_OSC_RINGSLIDE_MODE         4       /* control type: slide, callback function: OSC_MODE_CHANGE */
 #define  PANEL_OSC_RINGSLIDE_COUPLING     5       /* control type: slide, callback function: OSC_COUPLING_CHANGE */
 #define  PANEL_OSC_RINGKNOB_SENSITIVITY   6       /* control type: slide, callback function: OSC_SENSITIVITY_CHANGE */
 #define  PANEL_OSC_RINGKNOB_TIMEBASE      7       /* control type: slide, callback function: OSC_TIMEBASE_CHANGE */
 #define  PANEL_OSC_BUTTON_OSCIL_RUN       8       /* control type: textButton, callback function: BTN_RUN_CLICK */
 #define  PANEL_OSC_DECORATION             9       /* control type: deco, callback function: (none) */
-#define  PANEL_OSC_TIMER_OSC              10      /* control type: timer, callback function: TIME_OSC_TICK */
+#define  PANEL_OSC_NUMERIC_K2_F           10      /* control type: numeric, callback function: (none) */
+#define  PANEL_OSC_NUMERIC_K2_AMP         11      /* control type: numeric, callback function: (none) */
+#define  PANEL_OSC_NUMERIC_K1_F           12      /* control type: numeric, callback function: (none) */
+#define  PANEL_OSC_NUMERIC_K1_AMP         13      /* control type: numeric, callback function: (none) */
+#define  PANEL_OSC_TIMER_OSC              14      /* control type: timer, callback function: TIME_OSC_TICK */
+#define  PANEL_OSC_TEXTMSG                15      /* control type: textMsg, callback function: (none) */
 
 
      /* Control Arrays: */
@@ -42,6 +47,7 @@
      /* Callback Prototypes: */
 
 int  CVICALLBACK BTN_RUN_CLICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+int  CVICALLBACK GRAPH_FFT_EVEN(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_COUPLING_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_MODE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_SENSITIVITY_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);

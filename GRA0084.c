@@ -118,7 +118,7 @@ void CVICALLBACK ShowFrameGenerator (int menuBar, int menuItem, void *callbackDa
 {
 	DisplayPanel(*panelHandleGenerator);
 	HidePanel(*panelHandleVoltmetr);	
-	//HidePanel(*panelHandleOscil);
+	HidePanel(*panelHandleOscil);
 	HidePanel(*panelHandleRozcestnik);
 }
 

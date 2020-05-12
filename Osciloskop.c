@@ -77,7 +77,7 @@ void RenderGraphAndFFT(){
 								VAL_YELLOW);
 	RefreshGraph (*panelHandleOscil, PANEL_OSC_GRAPH_OSCIL);
 	
-	FFTEx (generatorSignalArray, 5000, 5000, NULL, 0, fftTable);
+	FFTEx (generatorSignalArray, 5000, 5000, NULL, 0, fftTable);	// Výpoèet FFT
 	for (unsigned int i = 0; i<BUFFER_SIZE; i++)
 	{
 		FFTarray[i] = sqrt(pow(fftTable[i].real,2) + pow(fftTable[i].imaginary,2));
@@ -87,7 +87,7 @@ void RenderGraphAndFFT(){
 	
 	double dt = BUFFER_SIZE/SAMPLING_RATE;
 	double df = 2/dt;
-	SetCtrlAttribute(*panelHandleOscil,PANEL_OSC_GRAPH_FFT,ATTR_XAXIS_GAIN,df);
+	SetCtrlAttribute(*panelHandleOscil,PANEL_OSC_GRAPH_FFT,ATTR_XAXIS_GAIN,df);	// Upravení mìøítka osy
 	SetAxisRange (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, VAL_MANUAL, 0.0, 100.0, VAL_NO_CHANGE, 0.0, 1.0);
 }
 int CVICALLBACK BackgroundThread(int *data){
@@ -98,7 +98,7 @@ int CVICALLBACK BackgroundThread(int *data){
 	while(backgroundThreadRunning){	
 		
 		pointTimeDelta = BUFFER_SIZE/GRAPH_POINT_COUNT;				// Výpoèet kroku cyklu for, tj. faktor podvzorkování dat pro graf
-		oscGraphBufferSampleRate = SAMPLING_RATE/pointTimeDelta;	// Výpoèet nové vzorkovací frekvence dat v grafu (vzniká zde malá odchylka!!)
+		oscGraphBufferSampleRate = SAMPLING_RATE/pointTimeDelta;	// Výpoèet nové vzorkovací frekvence dat v grafu 
 		oscGraphBufferDeep = 5*oscGraphBufferSampleRate/10;
 		
 		thisIterationIndexStart = oscGraphBufferLastIndex;
@@ -275,6 +275,28 @@ int CVICALLBACK OSC_MODE_CHANGE (int panel, int control, int event,
 			}
 			
 				
+			break;
+	}
+	return 0;
+}
+
+int CVICALLBACK GRAPH_FFT_EVEN (int panel, int control, int event,
+								void *callbackData, int eventData1, int eventData2)
+{
+	double K1amp,K1f,K2amp,K2f;
+	switch (event)
+	{
+		case EVENT_COMMIT:
+			GetGraphCursor (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, 1 ,&K1f, &K1amp);
+			GetGraphCursor (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, 2 ,&K2f, &K2amp );
+			
+			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K1_AMP,K1amp);
+			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K1_F,K1f*20);
+			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K2_AMP,K2amp);
+			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K2_F,K2f*20);
+			break;
+		case EVENT_LEFT_CLICK:
+			
 			break;
 	}
 	return 0;

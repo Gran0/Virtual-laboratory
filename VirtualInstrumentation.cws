@@ -61,9 +61,9 @@ Window Z-Order = 5
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.c"
 File Type = "CSource"
-Disk Date = 3672041833
+Disk Date = 3672156647
 In Projects = "1,"
-Source Window State = "1,85,85,85,94,94,94,0,0,0,0,0,0,0,0,0,70,0,85,94,401,602,1,0,"
+Source Window State = "1,295,295,295,69,69,69,0,0,0,0,0,0,0,0,0,262,0,295,69,401,602,1,0,"
 Window Top = 95
 Window Left = 42
 Window Z-Order = 2
@@ -72,7 +72,7 @@ Window Z-Order = 2
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.uir"
 File Type = "User Interface Resource"
-Disk Date = 3672042162
+Disk Date = 3672156586
 In Projects = "1,"
 Window Top = 126
 Window Left = 58
@@ -84,84 +84,14 @@ Window Z-Order = 1
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/GRA0084.c"
 File Type = "CSource"
-Disk Date = 3672040836
+Disk Date = 3672155373
 In Projects = "1,"
-Source Window State = "1,120,120,120,6,6,6,0,0,0,0,0,0,0,0,0,98,0,120,6,401,602,1,0,"
+Source Window State = "1,111,111,111,33,33,33,0,0,0,0,0,0,0,0,0,19,0,111,33,401,602,1,0,"
 Window Top = 64
 Window Left = 26
-Window Z-Order = 4
+Window Z-Order = 3
 
 [File 0005]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.h"
-File Type = "Include"
-Disk Date = 3672042110
-In Projects = "1,"
-Source Window State = "1,44,44,44,17,17,17,0,0,0,0,0,0,0,0,0,16,0,44,17,401,602,1,0,"
-Window Top = 64
-Window Left = 26
-
-[File 0006]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop_thread.h"
-File Type = "Include"
-Disk Date = 3671816790
-In Projects = "1,"
-Source Window State = "1,20,20,20,29,29,29,0,0,0,0,0,0,0,0,0,0,0,20,29,281,630,1,0,"
-Window Top = 95
-Window Left = 42
-
-[File 0007]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/Generator.c"
-File Type = "CSource"
-Disk Date = 3672032188
-In Projects = "1,"
-Source Window State = "1,78,78,78,31,31,31,0,0,0,0,0,0,0,0,0,64,0,78,31,401,602,1,0,"
-Window Top = 126
-Window Left = 58
-
-[File 0008]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/Voltmetr.c"
-File Type = "CSource"
-Disk Date = 3672033385
-In Projects = "1,"
-Source Window State = "1,100,108,108,0,1,1,0,3,0,0,0,0,0,0,0,89,0,100,0,401,602,1,0,"
-Window Top = 95
-Window Left = 42
-
-[File 0009]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/Generator.h"
-File Type = "Include"
-Disk Date = 3672041908
-In Projects = "1,"
-Source Window State = "1,54,54,54,0,0,0,0,0,0,0,0,0,0,0,0,26,0,54,0,401,602,1,0,"
-Window Top = 95
-Window Left = 42
-
-[File 0010]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/GRA0084.h"
-File Type = "Include"
-Disk Date = 3669699111
-In Projects = "1,"
-Source Window State = "1,15,15,15,18,18,18,0,0,0,0,0,0,0,0,0,9,0,15,18,386,602,1,0,"
-Window Top = 33
-Window Left = 10
-
-[File 0011]
-Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Path Line0002 = "rální projekt/Virtual-laboratory/Voltmetr.h"
-File Type = "Include"
-Disk Date = 3670908150
-In Projects = "1,"
-Source Window State = "1,14,14,14,0,0,0,0,0,0,0,0,0,0,0,0,3,0,14,0,401,602,1,0,"
-Window Top = 33
-Window Left = 10
-
-[File 0012]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Generator.uir"
 File Type = "User Interface Resource"
@@ -171,7 +101,77 @@ Window Top = 157
 Window Left = 74
 Window Height = 401
 Window Width = 602
-Window Z-Order = 3
+Window Z-Order = 4
+
+[File 0006]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/Generator.c"
+File Type = "CSource"
+Disk Date = 3672032188
+In Projects = "1,"
+Source Window State = "1,78,78,78,31,31,31,0,0,0,0,0,0,0,0,0,64,0,78,31,401,602,1,0,"
+Window Top = 126
+Window Left = 58
+
+[File 0007]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/Voltmetr.c"
+File Type = "CSource"
+Disk Date = 3672033385
+In Projects = "1,"
+Source Window State = "1,100,108,108,0,1,1,0,3,0,0,0,0,0,0,0,89,0,100,0,401,602,1,0,"
+Window Top = 95
+Window Left = 42
+
+[File 0008]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/Generator.h"
+File Type = "Include"
+Disk Date = 3672041908
+In Projects = "1,"
+Source Window State = "1,54,54,54,0,0,0,0,0,0,0,0,0,0,0,0,26,0,54,0,401,602,1,0,"
+Window Top = 95
+Window Left = 42
+
+[File 0009]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/GRA0084.h"
+File Type = "Include"
+Disk Date = 3669699111
+In Projects = "1,"
+Source Window State = "1,15,15,15,18,18,18,0,0,0,0,0,0,0,0,0,9,0,15,18,386,602,1,0,"
+Window Top = 33
+Window Left = 10
+
+[File 0010]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.h"
+File Type = "Include"
+Disk Date = 3672156586
+In Projects = "1,"
+Source Window State = "1,44,44,44,17,17,17,0,0,0,0,0,0,0,0,0,16,0,44,17,401,602,1,0,"
+Window Top = 64
+Window Left = 26
+
+[File 0011]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop_thread.h"
+File Type = "Include"
+Disk Date = 3671816790
+In Projects = "1,"
+Source Window State = "1,20,20,20,29,29,29,0,0,0,0,0,0,0,0,0,0,0,20,29,281,630,1,0,"
+Window Top = 95
+Window Left = 42
+
+[File 0012]
+Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
+Path Line0002 = "rální projekt/Virtual-laboratory/Voltmetr.h"
+File Type = "Include"
+Disk Date = 3670908150
+In Projects = "1,"
+Source Window State = "1,14,14,14,0,0,0,0,0,0,0,0,0,0,0,0,3,0,14,0,401,602,1,0,"
+Window Top = 33
+Window Left = 10
 
 [File 0013]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"

@@ -43,3 +43,8 @@ Class="Function"
 Prototype="int OSC_MODE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
 SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:263:1"
 
+[GRAPH_FFT_EVEN]
+Class="Function"
+Prototype="int GRAPH_FFT_EVEN(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:283:1"
+
