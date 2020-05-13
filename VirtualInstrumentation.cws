@@ -31,7 +31,7 @@ Save Changes Before Compiling = "Always"
 Hide Windows = False
 Break At First Statement = False
 Sort Type = "File Name"
-Number of Opened Files = 5
+Number of Opened Files = 3
 Window Confinement Region Enabled = True
 MainColumnWidth = 243
 FileDateColumnWidth = 70
@@ -55,7 +55,6 @@ In Projects = "1,"
 Source Window State = "1,14,14,14,0,0,0,0,0,0,0,0,0,0,0,0,6,0,14,0,401,602,1,0,"
 Window Top = 157
 Window Left = 74
-Window Z-Order = 5
 
 [File 0002]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
@@ -66,19 +65,17 @@ In Projects = "1,"
 Source Window State = "1,295,295,295,69,69,69,0,0,0,0,0,0,0,0,0,262,0,295,69,401,602,1,0,"
 Window Top = 95
 Window Left = 42
-Window Z-Order = 2
 
 [File 0003]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.uir"
 File Type = "User Interface Resource"
-Disk Date = 3672156586
+Disk Date = 3672156847
 In Projects = "1,"
 Window Top = 126
 Window Left = 58
 Window Height = 401
 Window Width = 602
-Window Z-Order = 1
 
 [File 0004]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
@@ -86,32 +83,33 @@ Path Line0002 = "rální projekt/Virtual-laboratory/GRA0084.c"
 File Type = "CSource"
 Disk Date = 3672155373
 In Projects = "1,"
-Source Window State = "1,111,111,111,33,33,33,0,0,0,0,0,0,0,0,0,19,0,111,33,401,602,1,0,"
+Source Window State = "1,71,71,71,18,18,18,0,0,0,0,0,0,0,0,0,52,0,71,18,401,602,1,0,"
 Window Top = 64
 Window Left = 26
-Window Z-Order = 3
+Window Z-Order = 1
 
 [File 0005]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Generator.uir"
 File Type = "User Interface Resource"
-Disk Date = 3672041908
+Disk Date = 3672232348
 In Projects = "1,"
 Window Top = 157
 Window Left = 74
 Window Height = 401
 Window Width = 602
-Window Z-Order = 4
+Window Z-Order = 3
 
 [File 0006]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Generator.c"
 File Type = "CSource"
-Disk Date = 3672032188
+Disk Date = 3672233061
 In Projects = "1,"
-Source Window State = "1,78,78,78,31,31,31,0,0,0,0,0,0,0,0,0,64,0,78,31,401,602,1,0,"
+Source Window State = "1,192,192,192,140,140,140,0,0,0,0,0,0,0,0,0,166,0,192,140,401,602,1,0,"
 Window Top = 126
 Window Left = 58
+Window Z-Order = 2
 
 [File 0007]
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
@@ -127,7 +125,7 @@ Window Left = 42
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Generator.h"
 File Type = "Include"
-Disk Date = 3672041908
+Disk Date = 3672232348
 In Projects = "1,"
 Source Window State = "1,54,54,54,0,0,0,0,0,0,0,0,0,0,0,0,26,0,54,0,401,602,1,0,"
 Window Top = 95
@@ -147,7 +145,7 @@ Window Left = 10
 Path Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
 Path Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.h"
 File Type = "Include"
-Disk Date = 3672156586
+Disk Date = 3672156847
 In Projects = "1,"
 Source Window State = "1,44,44,44,17,17,17,0,0,0,0,0,0,0,0,0,16,0,44,17,401,602,1,0,"
 Window Top = 64
@@ -197,15 +195,11 @@ Window Width = 602
 
 [Tab Order]
 Tab 0001 Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Tab 0001 Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.uir"
+Tab 0001 Line0002 = "rální projekt/Virtual-laboratory/Generator.uir"
 Tab 0002 Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Tab 0002 Line0002 = "rální projekt/Virtual-laboratory/Osciloskop.c"
+Tab 0002 Line0002 = "rální projekt/Virtual-laboratory/Generator.c"
 Tab 0003 Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Tab 0003 Line0002 = "rální projekt/Virtual-laboratory/GlobalVariables.h"
-Tab 0004 Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Tab 0004 Line0002 = "rální projekt/Virtual-laboratory/GRA0084.c"
-Tab 0005 Line0001 = "/c/Dokumenty/School rubish/8.semestr/Mìøicí systémy a jejich programování/Semest"
-Tab 0005 Line0002 = "rální projekt/Virtual-laboratory/Generator.uir"
+Tab 0003 Line0002 = "rální projekt/Virtual-laboratory/GRA0084.c"
 
 [Default Build Config 0001 Debug]
 Generate Browse Info = True

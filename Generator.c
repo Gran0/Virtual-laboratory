@@ -178,3 +178,23 @@ int CVICALLBACK Generator_run_Click (int panel, int control, int event,
 	return 0;
 }
 
+
+void CVICALLBACK SaveWaveformToFile (int menuBar, int menuItem, void *callbackData,
+									 int panel)
+{
+	int status;
+    static FILE *file;
+	static char path[400], dir[400];
+
+    GetProjectDir (dir);
+    status = FileSelectPopupEx (dir, "datafile.txt","Datafiles (*.txt)", "DataFile Storage",VAL_SAVE_BUTTON, 0, 1, path);
+    if (status != VAL_NO_FILE_SELECTED) {
+	    file = fopen (path, "w+");
+		fprintf(file,"Generovaný signál (vzorkovací frekvence %.2f kHz)        Vygenerováno programem VirtualInstrumentation - autor GRA0084\n",SAMPLING_RATE/1000.0);
+		
+        for (unsigned int i=0; i<BUFFER_SIZE;i++)
+    	    fprintf (file, "%.2f\n", generatorSignalArray[i]);
+        fclose (file);
+	}
+	
+}

@@ -32,10 +32,12 @@
      /* Menu Bars, Menus, and Menu Items: */
 
 #define  MENUBAR                          1
-#define  MENUBAR_MENU2                    2
-#define  MENUBAR_MENU2_ITEM1              3       /* callback function: ShowFrameRozcestnik */
-#define  MENUBAR_MENU2_ITEM2              4       /* callback function: ShowFrameOsciloskop */
-#define  MENUBAR_MENU2_ITEM3              5       /* callback function: ShowFrameVoltmeter */
+#define  MENUBAR_MENU1                    2
+#define  MENUBAR_MENU1_ITEM1_2            3       /* callback function: SaveWaveformToFile */
+#define  MENUBAR_MENU2                    4
+#define  MENUBAR_MENU2_ITEM1              5       /* callback function: ShowFrameRozcestnik */
+#define  MENUBAR_MENU2_ITEM2              6       /* callback function: ShowFrameOsciloskop */
+#define  MENUBAR_MENU2_ITEM3              7       /* callback function: ShowFrameVoltmeter */
 
 
      /* Callback Prototypes: */
@@ -46,6 +48,7 @@ int  CVICALLBACK Generator_run_Click(int panel, int control, int event, void *ca
 int  CVICALLBACK Noise_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK Offset_Change(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK panelGenerator_Close(int panel, int event, void *callbackData, int eventData1, int eventData2);
+void CVICALLBACK SaveWaveformToFile(int menubar, int menuItem, void *callbackData, int panel);
 void CVICALLBACK ShowFrameOsciloskop(int menubar, int menuItem, void *callbackData, int panel);
 void CVICALLBACK ShowFrameRozcestnik(int menubar, int menuItem, void *callbackData, int panel);
 void CVICALLBACK ShowFrameVoltmeter(int menubar, int menuItem, void *callbackData, int panel);

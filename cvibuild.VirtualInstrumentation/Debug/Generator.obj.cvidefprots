@@ -38,3 +38,8 @@ Class="Function"
 Prototype="int Generator_run_Click(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
 SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:163:1"
 
+[SaveWaveformToFile]
+Class="Function"
+Prototype="void SaveWaveformToFile(int menuBar, int menuItem, void *callbackData, int panel);"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Generator.c:182:1"
+
