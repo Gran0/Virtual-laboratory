@@ -29,7 +29,6 @@ int CVICALLBACK RINGSLIDE_OnClick (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
-
 			break;
 	}
 	return 0;
@@ -40,14 +39,10 @@ int CVICALLBACK panelVoltmeter_Close (int panel, int event, void *callbackData,
 {
 	switch (event)
 	{
-		case EVENT_GOT_FOCUS:
-
-			break;
-		case EVENT_LOST_FOCUS:
-
-			break;
 		case EVENT_CLOSE:
 			QuitUserInterface(0);
+			break;
+		default:
 			break;
 	}
 	return 0;
@@ -64,6 +59,8 @@ int CVICALLBACK Voltmeter_Range_Change (int panel, int control, int event,
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_RINGDIAL_VOLT_RANGE, &range);
 			SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_GAUGE, ATTR_MAX_VALUE, range);
 			SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_GAUGE, ATTR_MIN_VALUE, -range);
+			
+			// Zmìna poètu vykreslených desetinných míst na budíku
 			if(range < 20.0)
 				SetCtrlAttribute (*panelHandleVoltmetr, PANEL_VOLT_GAUGE, ATTR_PRECISION, 3);
 			else
@@ -78,6 +75,7 @@ int CVICALLBACK Voltmeter_Smoothing_Change (int panel, int control, int event,
 {
 	switch (event)
 	{
+		// Nastavení dynamiky vykreslování budíku
 		case EVENT_COMMIT:
 			double tm;
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_RINGDIAL_SMOOTHING, &tm);	
@@ -93,7 +91,6 @@ int CVICALLBACK Voltmeter_Coupling_Change (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
-
 			break;
 	}
 	return 0;
@@ -152,12 +149,13 @@ int CVICALLBACK V_TIMER_TICK (int panel, int control, int event,
 			GetCtrlVal (*panelHandleVoltmetr, PANEL_VOLT_SW_VOLTMETER_ENABLE, &enable);
 			
 			// Výpoèet hodnoty ukazatele v závislosti na nastavení pøístroje
-			if(enable == 1){
-				if(coupling == 1)	// DC
+			if(enable == 1){ // DC
+				if(coupling == 1)
 					gaugeValue = SSvalue(generatorSignalArray,BUFFER_SIZE);
-				else{		// AC
+				else{ // AC
 					float DC = SSvalue(generatorSignalArray,BUFFER_SIZE);
-
+					
+					// Odeèet støední hodnoty od signálu
 					for (int i=0; i<BUFFER_SIZE-1; i++)
 					{
 						values[i] = generatorSignalArray[i] - DC;
@@ -168,7 +166,7 @@ int CVICALLBACK V_TIMER_TICK (int panel, int control, int event,
 			else{
 				gaugeValue = 0.0f;				
 			}
-		
+			// Vypsání hodnoty na èíselný display
 			SetCtrlVal (*panelHandleVoltmetr,PANEL_VOLT_NUMERIC_DIG_VOLTAGE, gaugeValue);
 			break;
 	}
@@ -187,7 +185,7 @@ int CVICALLBACK TIME_ANIMATION_TICK (int panel, int control, int event,
 			
 			// pøepínání setrvaènosti ruèièky voltmetru podle rozsahu
 			if(range >= 2.0)
-				animatedGaugeValue = animatedGaugeValue + (-animatedGaugeValue+gaugeValue)*0.2f; // konstanta urèuje dynamiku ruèièky	
+				animatedGaugeValue = animatedGaugeValue + (-animatedGaugeValue+gaugeValue)*0.2f; // konstanta urèuje dynamiku pohybu ruèièky	
 			else
 				animatedGaugeValue = animatedGaugeValue + (-animatedGaugeValue+gaugeValue)*0.1f;
 			

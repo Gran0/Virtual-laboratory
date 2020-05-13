@@ -28,16 +28,16 @@ const unsigned int maxBFSize = 5*SAMPLING_RATE/10;		// Hloubka bufferu 500 ms, c
 double osciloscopeGraphBuffer[maxBFSize];				// Pole kruhového bufferu
 unsigned int oscGraphBufferLastIndex = 0;				// Adresa posledního místa zápisu
 
-short unsigned int pointTimeDelta;
-unsigned int oscGraphBufferSampleRate;
+short unsigned int pointTimeDelta;		// Krok pro pøeskakování data pøi kompresi pole namìøených hodnot
+unsigned int oscGraphBufferSampleRate;	// Pøepoètená frekvence vzorkování dat po kompresi pole namìøených dat
 
-double FFTarray[BUFFER_SIZE];
+double FFTarray[BUFFER_SIZE];			// Pole pro výpoèet FFT
 NIComplexNumber fftTable[BUFFER_SIZE];
 
 typedef enum{ GND=0,
 			  DC,
 			  AC
-			 } CPL;
+			 } CPL;		// Výèet pro nastavení vazby signálu
 CPL coupling = GND;
 // -------------------- Panel functions
 int CVICALLBACK panelOSC_Close (int panel, int event, void *callbackData,
@@ -45,14 +45,10 @@ int CVICALLBACK panelOSC_Close (int panel, int event, void *callbackData,
 {
 	switch (event)
 	{
-		case EVENT_GOT_FOCUS:
-
-			break;
-		case EVENT_LOST_FOCUS:
-
-			break;
 		case EVENT_CLOSE:
 			QuitUserInterface(0);
+			break;
+		default:
 			break;
 	}
 	return 0;
@@ -85,26 +81,30 @@ void RenderGraphAndFFT(){
 	DeleteGraphPlot (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, -1, VAL_DELAYED_DRAW);
 	PlotY (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, FFTarray, BUFFER_SIZE, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID, 1, VAL_YELLOW);
 	
+	// Výpoèet mìøítka X osy FFT
 	double dt = BUFFER_SIZE/SAMPLING_RATE;
 	double df = 2/dt;
 	SetCtrlAttribute(*panelHandleOscil,PANEL_OSC_GRAPH_FFT,ATTR_XAXIS_GAIN,df);	// Upravení mìøítka osy
 	SetAxisRange (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, VAL_MANUAL, 0.0, 100.0, VAL_NO_CHANGE, 0.0, 1.0);
 }
+
+// Funkce pro kopírování dat z bufferu generátoru do bufferu osciloskopu
+// Funkce bìží ve vlastním vláknu
 int CVICALLBACK BackgroundThread(int *data){
 	backgroundThreadRunning = true;
 	unsigned int thisIterationIndexStart, cycleEnd,i;
 	double sum = 0, ssValue=0;
 	
 	while(backgroundThreadRunning){	
-		
 		pointTimeDelta = BUFFER_SIZE/GRAPH_POINT_COUNT;				// Výpoèet kroku cyklu for, tj. faktor podvzorkování dat pro graf
 		oscGraphBufferSampleRate = SAMPLING_RATE/pointTimeDelta;	// Výpoèet nové vzorkovací frekvence dat v grafu 
 		oscGraphBufferDeep = 5*oscGraphBufferSampleRate/10;
 		
 		thisIterationIndexStart = oscGraphBufferLastIndex;
-		readMutexFlag = true;	
-		for (unsigned int index = 0; index<BUFFER_SIZE-pointTimeDelta; index+=pointTimeDelta)		// Kopírování dat z generátoru
+		readMutexFlag = true;	// Oznámení pro druhé vlákno, že teï probíhá ètení - dojde k blokaci zápisu do pole - MUTEX
+		for (unsigned int index = 0; index<BUFFER_SIZE-pointTimeDelta; index+=pointTimeDelta)		
 		{
+			// Kopírování dat z generátoru
 			if(coupling == GND)
 				osciloscopeGraphBuffer[oscGraphBufferLastIndex] = 0.0;
 			else 
@@ -115,7 +115,7 @@ int CVICALLBACK BackgroundThread(int *data){
 			else
 				oscGraphBufferLastIndex = 0;
 		}
-		readMutexFlag = false;
+		readMutexFlag = false;	// Uvolnìní zámku - MUTEX
 		newDataFlag = false;
 		
 		// Odeèet stejnosmìrné složky od novì zapsaných dat
@@ -200,9 +200,9 @@ int CVICALLBACK OSC_SENSITIVITY_CHANGE (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			GetCtrlVal (*panelHandleOscil, PANEL_OSC_RINGKNOB_SENSITIVITY, &voltageRange);
-			
+			// Zmìna mezí Y osy
 			SetAxisRange (*panelHandleOscil, PANEL_OSC_GRAPH_OSCIL, VAL_NO_CHANGE, 0.0, 0.0, VAL_MANUAL, -voltageRange, voltageRange);
-			
+			// Zmìna popisku osciloskopu v závislosti na rozsahu
 			if(voltageRange <= 1.0){
 				SetCtrlAttribute (*panelHandleOscil, PANEL_OSC_GRAPH_OSCIL, ATTR_YAXIS_GAIN, 1000.0);
 				SetCtrlAttribute (*panelHandleOscil, PANEL_OSC_GRAPH_OSCIL, ATTR_YNAME, "U [mV]");
@@ -223,6 +223,7 @@ int CVICALLBACK OSC_TIMEBASE_CHANGE (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
+			// Pøeètení hodnoty èasové základy a zmìna rozsahu X osy
 			GetCtrlVal (*panelHandleOscil, PANEL_OSC_RINGKNOB_TIMEBASE, &timeBase);
 			timeBase *= 5;
 			SetAxisRange (*panelHandleOscil, PANEL_OSC_GRAPH_OSCIL, VAL_MANUAL, 0.0, timeBase, VAL_NO_CHANGE, 0.0, 1.0);
@@ -267,14 +268,13 @@ int CVICALLBACK OSC_MODE_CHANGE (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
+			// Zmìna režimu chodu osciloskopu
 			GetCtrlVal (*panelHandleOscil, PANEL_OSC_RINGSLIDE_MODE, &value);
-			if(value == 1){	// Single mode
+			if(value == 1){	
+				// Pokud byl osciloskop pøepnut do SINGLE módu, zastav èasovaè a zmìn popisek tlaèítka Start
 				SetCtrlAttribute(*panelHandleOscil, PANEL_OSC_TIMER_OSC, ATTR_ENABLED, 0);	// Stop
 				SetCtrlAttribute (*panelHandleOscil, PANEL_OSC_BUTTON_OSCIL_RUN, ATTR_CTRL_VAL, 0);	// Zmìò tlaèítko
- 
 			}
-			
-				
 			break;
 	}
 	return 0;
@@ -289,14 +289,13 @@ int CVICALLBACK GRAPH_FFT_EVEN (int panel, int control, int event,
 		case EVENT_COMMIT:
 			GetGraphCursor (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, 1 ,&K1f, &K1amp);
 			GetGraphCursor (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, 2 ,&K2f, &K2amp );
-			
+			// Aktualizace èíselných hodnot kurzorù na panelu pøístroje
 			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K1_AMP,K1amp);
 			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K1_F,K1f*20);
 			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K2_AMP,K2amp);
 			SetCtrlVal(*panelHandleOscil,PANEL_OSC_NUMERIC_K2_F,K2f*20);
 			break;
 		case EVENT_LEFT_CLICK:
-			
 			break;
 	}
 	return 0;

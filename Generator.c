@@ -18,28 +18,24 @@
 #include "GlobalVariables.h"
 
 
-double amplitude,offset,noise;
-unsigned int frequence = 1;
-double phase = 0;
+double 			amplitude,offset,noise;
+unsigned int 	frequence = 1;
+double 			phase = 0;
 enum{SINUS,TRIANG,SQUARE} waveformType;
 
 const unsigned int bufferDeep = 3*SAMPLING_RATE/10;	// Hloubka bufferu 300 ms;
-double generatorGraphBuffer[bufferDeep];
-unsigned int bufferLastIndex = 0;
+double 			generatorGraphBuffer[bufferDeep];
+unsigned int 	bufferLastIndex = 0;
 
 int CVICALLBACK panelGenerator_Close (int panel, int event, void *callbackData,
 									  int eventData1, int eventData2)
 {
 	switch (event)
 	{
-		case EVENT_GOT_FOCUS:
-
-			break;
-		case EVENT_LOST_FOCUS:
-
-			break;
 		case EVENT_CLOSE:
 			QuitUserInterface(0);
+			break;
+		default:
 			break;
 	}
 	return 0;
@@ -89,9 +85,21 @@ int CVICALLBACK TimerGen_Tick (int panel, int control, int event,
 			
 			// Vykreslování grafu v generátoru signálu
 			RefreshGraph (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM);
-			DeleteGraphPlot(*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM,-1, VAL_IMMEDIATE_DRAW);
-			int plotHandle = PlotY (*panelHandleGenerator, PANEL_GEN_GRAPH_WAVEFORM, generatorGraphBuffer, bufferDeep, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID,
-									SAMPLING_RATE, VAL_YELLOW);
+			DeleteGraphPlot(*panelHandleGenerator,
+							PANEL_GEN_GRAPH_WAVEFORM,
+							-1,
+							VAL_IMMEDIATE_DRAW);
+			
+			int plotHandle = PlotY (*panelHandleGenerator,
+									PANEL_GEN_GRAPH_WAVEFORM,
+									generatorGraphBuffer,
+									bufferDeep,
+									VAL_DOUBLE,
+									VAL_THIN_LINE,
+									VAL_EMPTY_SQUARE,
+									VAL_SOLID,
+									SAMPLING_RATE,
+									VAL_YELLOW);
 			break;
 	}
 	return 0;
@@ -104,6 +112,7 @@ int CVICALLBACK Signal_type_Change (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			int choice;
+			// Zmìna prùbìhu signálu
 			GetCtrlVal (*panelHandleGenerator, PANEL_GEN_RINGSLIDE_SIGNAL_TYPE, &choice);
 			waveformType = choice;			
 			break;
@@ -117,6 +126,7 @@ int CVICALLBACK Amplitude_Change (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
+			// Zmìna aplitudy signálu
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_AMPLITUDE,&amplitude);
 			break;
 	}
@@ -129,6 +139,7 @@ int CVICALLBACK Offset_Change (int panel, int control, int event,
 	switch (event)
 	{
 		case EVENT_COMMIT:
+			// Zmìna stejnosmìrné složky signálu
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_OFFSET,&offset);
 			break;
 	}
@@ -142,7 +153,6 @@ int CVICALLBACK Freq_Change (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_FREQUENCY,&frequence);
-			
 			break;
 	}
 	return 0;
@@ -167,11 +177,13 @@ int CVICALLBACK Generator_run_Click (int panel, int control, int event,
 	{
 		case EVENT_COMMIT:	// Start-Stop signal generator 
 			int choice;
+			// Vyètení nastavených hodnot z panelu
 			GetCtrlVal (*panelHandleGenerator, PANEL_GEN_BUTTON_ENABLE_GEN, &choice);		
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_AMPLITUDE,&amplitude);
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_OFFSET,&offset);
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_FREQUENCY,&frequence);
 			GetCtrlVal(*panelHandleGenerator,PANEL_GEN_NUMERIC_NOISE,&noise);
+			// Spuštìní nebo zastavení èasovaèe, který generuje signál
 			SetCtrlAttribute (*panelHandleGenerator, PANEL_GEN_TIMER_GENERATOR, ATTR_ENABLED, choice);
 			break;
 	}
@@ -187,11 +199,19 @@ void CVICALLBACK SaveWaveformToFile (int menuBar, int menuItem, void *callbackDa
 	static char path[400], dir[400];
 
     GetProjectDir (dir);
-    status = FileSelectPopupEx (dir, "datafile.txt","Datafiles (*.txt)", "DataFile Storage",VAL_SAVE_BUTTON, 0, 1, path);
+	// Vytvoøení souboru
+    status = FileSelectPopupEx (dir, "datafile.txt",
+								"Datafiles (*.txt)",
+								"DataFile Storage",
+								VAL_SAVE_BUTTON,
+								0,
+								1,
+								path);
     if (status != VAL_NO_FILE_SELECTED) {
 	    file = fopen (path, "w+");
 		fprintf(file,"Generovaný signál (vzorkovací frekvence %.2f kHz)        Vygenerováno programem VirtualInstrumentation - autor GRA0084\n",SAMPLING_RATE/1000.0);
 		
+		// Uložení dat do souboru
         for (unsigned int i=0; i<BUFFER_SIZE;i++)
     	    fprintf (file, "%.2f\n", generatorSignalArray[i]);
         fclose (file);
