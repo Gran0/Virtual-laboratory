@@ -78,6 +78,10 @@ void RenderGraphAndFFT(){
 	{
 		FFTarray[i] = sqrt(pow(fftTable[i].real,2) + pow(fftTable[i].imaginary,2));
 	}
+	for (unsigned int i = 0; i<BUFFER_SIZE; i++)
+	{
+		FFTarray[i] /= 5000.0 ;
+	}
 	DeleteGraphPlot (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, -1, VAL_DELAYED_DRAW);
 	PlotY (*panelHandleOscil, PANEL_OSC_GRAPH_FFT, FFTarray, BUFFER_SIZE, VAL_DOUBLE, VAL_THIN_LINE, VAL_EMPTY_SQUARE, VAL_SOLID, 1, VAL_YELLOW);
 	

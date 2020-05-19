@@ -11,40 +11,40 @@ SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich pro
 [BackgroundThread]
 Class="Function"
 Prototype="int BackgroundThread(int *data);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:93:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:97:1"
 
 [TIME_OSC_TICK]
 Class="Function"
 Prototype="int TIME_OSC_TICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:157:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:161:1"
 
 [BTN_RUN_CLICK]
 Class="Function"
 Prototype="int BTN_RUN_CLICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:169:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:173:1"
 
 [OSC_SENSITIVITY_CHANGE]
 Class="Function"
 Prototype="int OSC_SENSITIVITY_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:195:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:199:1"
 
 [OSC_TIMEBASE_CHANGE]
 Class="Function"
 Prototype="int OSC_TIMEBASE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:219:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:223:1"
 
 [OSC_COUPLING_CHANGE]
 Class="Function"
 Prototype="int OSC_COUPLING_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:237:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:241:1"
 
 [OSC_MODE_CHANGE]
 Class="Function"
 Prototype="int OSC_MODE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:264:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:268:1"
 
 [GRAPH_FFT_EVEN]
 Class="Function"
 Prototype="int GRAPH_FFT_EVEN(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);"
-SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:283:1"
+SourceLocation="c:\Dokumenty\School rubish\8.semestr\Mìøicí systémy a jejich programování\Semestrální projekt\Virtual-laboratory\Osciloskop.c:287:1"
 
