@@ -38,16 +38,19 @@
      /* Menu Bars, Menus, and Menu Items: */
 
 #define  MENUBAR                          1
-#define  MENUBAR_M_OSC1                   2
-#define  MENUBAR_M_OSC1_I_OSC             3       /* callback function: ShowFrameRozcestnik */
-#define  MENUBAR_M_OSC1_I_OSC2            4       /* callback function: ShowFrameVoltmeter */
-#define  MENUBAR_M_OSC1_I_OSC3            5       /* callback function: ShowFrameGenerator */
+#define  MENUBAR_M_OSC_SOUBOR             2
+#define  MENUBAR_M_OSC_SOUBOR_I_OTEVRIT   3       /* callback function: LoadDataFromFile */
+#define  MENUBAR_M_OSC1                   4
+#define  MENUBAR_M_OSC1_I_OSC             5       /* callback function: ShowFrameRozcestnik */
+#define  MENUBAR_M_OSC1_I_OSC2            6       /* callback function: ShowFrameVoltmeter */
+#define  MENUBAR_M_OSC1_I_OSC3            7       /* callback function: ShowFrameGenerator */
 
 
      /* Callback Prototypes: */
 
 int  CVICALLBACK BTN_RUN_CLICK(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK GRAPH_FFT_EVEN(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
+void CVICALLBACK LoadDataFromFile(int menubar, int menuItem, void *callbackData, int panel);
 int  CVICALLBACK OSC_COUPLING_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_MODE_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
 int  CVICALLBACK OSC_SENSITIVITY_CHANGE(int panel, int control, int event, void *callbackData, int eventData1, int eventData2);
